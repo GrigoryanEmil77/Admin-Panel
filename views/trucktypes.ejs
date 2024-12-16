@@ -1,0 +1,574 @@
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Dispatch-assist admin</title>
+  <link rel="stylesheet" href="vendors/feather/feather.css">
+  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css">
+  <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+  <link rel="shortcut icon" href="/images/favicon.ico"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap" rel="stylesheet">   
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" /> 
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">  
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<style>
+    .sidebar .nav .nav-item.active > .nav-link{
+    background-color:purple;
+  }
+  .sidebar .nav:not(.sub-menu) > .nav-item > .nav-link:hover {
+    background-color:purple;
+  }
+ 
+</style>
+<body>
+  <div class="container-scroller">
+
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="images/logo1-1.jpg" class="mr-2" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo1-1.jpg" alt="logo"/></a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <span class="icon-menu"></span>
+        </button>
+        <ul class="navbar-nav mr-lg-2">
+          <li class="nav-item nav-search d-none d-lg-block">
+            <div class="input-group">
+              <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                <span class="input-group-text" id="search">
+                  <i class="icon-search"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav navbar-nav-right">
+          <li class="nav-item dropdown">
+            <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+              <i class="icon-bell mx-0"></i>
+              <span class="count"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+              <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+              <a class="dropdown-item preview-item" href="/pages/samples/error-404.html">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-success">
+                    <i class="ti-info-alt mx-0"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-normal">Application Error</h6>
+                  <p class="font-weight-light small-text mb-0 text-muted">
+                    Just now
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-info">
+                    <i class="ti-user mx-0"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-normal">New user registration</h6>
+                  <p class="font-weight-light small-text mb-0 text-muted">
+                    2 days ago
+                  </p>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item nav-profile dropdown">
+                                    
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+              <a class="dropdown-item">
+                <i class="ti-settings text-primary"></i>
+                Settings
+              </a>
+              <a href="/logout" class="dropdown-item">
+                <i class="ti-power-off text-primary"></i>
+                Logout
+                
+              </a>
+            </div>
+          </li>
+      
+        </ul>
+      </div>
+    </nav>
+    
+    <div class="container-fluid page-body-wrapper">
+      <div class="theme-setting-wrapper">
+        <div id="settings-trigger"><i class="ti-settings"></i></div>
+        <div id="theme-settings" class="settings-panel">
+          <i class="settings-close ti-close"></i>
+          <p class="settings-heading">SIDEBAR SKINS</p>
+          <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border mr-3"></div>Light</div>
+          <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark</div>
+          <p class="settings-heading mt-2">HEADER SKINS</p>
+          <div class="color-tiles mx-0 px-4">
+            <div class="tiles success"></div>
+            <div class="tiles warning"></div>
+            <div class="tiles danger"></div>
+            <div class="tiles info"></div>
+            <div class="tiles dark"></div>
+            <div class="tiles default"></div>
+          </div>
+        </div>
+      </div>
+   
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/dashboard">
+                  <i class="icon-grid menu-icon"></i>
+                  <span class="menu-title">Dashboard</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/profile">
+                    <i class="icon-layout menu-icon"></i>
+                    <span class="menu-title">Profile</span>
+                </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/navbarinfo">
+                  <i class="icon-layout menu-icon"></i>
+                  <span class="menu-title">Navbar</span>
+              </a>
+          </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/homeinfo">
+                    <i class="icon-layout menu-icon"></i>
+                    <span class="menu-title">Homeinfo</span>
+                </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/aboutinfo">
+                  <i class="icon-layout menu-icon"></i>
+                  <span class="menu-title">Aboutinfo</span>
+              </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/services">
+                <i class="icon-layout menu-icon"></i>
+                <span class="menu-title">Services</span>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/trucktypes">
+              <i class="icon-layout menu-icon"></i>
+              <span class="menu-title">Truck Types</span>
+          </a>
+      </li>
+          
+        <li class="nav-item">
+          <a class="nav-link" href="/questions">
+              <i class="icon-layout menu-icon"></i>
+              <span class="menu-title">Questions</span>
+          </a>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/customer-reviews">
+              <i class="icon-layout menu-icon"></i>
+              <span class="menu-title">Customers</span>
+          </a>
+      </li>  
+      <li class="nav-item">
+        <a class="nav-link" href="/request">
+            <i class="icon-layout menu-icon"></i>
+            <span class="menu-title">Request A CallBack</span>
+        </a>
+    </li>  
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/contactinfo">
+                    <i class="icon-layout menu-icon"></i>
+                    <span class="menu-title">ContactInfo</span>
+                </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/follow-us">
+                  <i class="icon-layout menu-icon"></i>
+                  <span class="menu-title">Follow</span>
+              </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/truckStop">
+                <i class="icon-layout menu-icon"></i>
+                <span class="menu-title">TruckStop</span>
+            </a>
+        </li>
+    
+        <li class="nav-item">
+          <a class="nav-link" href="/upload-videoheader">
+              <i class="icon-layout menu-icon"></i>
+              <span class="menu-title">Dispatch Video</span>
+          </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/message">
+            <i class="icon-layout menu-icon"></i>
+            <span class="menu-title">Message</span>
+        </a>
+    </li>
+        
+        
+      
+        
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+              <i class="icon-columns menu-icon"></i>
+              <span class="menu-title">Form elements</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="form-elements">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Basic Elements</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+          
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <i class="icon-head menu-icon"></i>
+              <span class="menu-title">User Pages</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/login"> Login </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/register"> Register </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
+              <i class="icon-ban menu-icon"></i>
+              <span class="menu-title">Error pages</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="error">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            
+  
+            <div class="col-md-6">
+                <div class="card">
+                  <div class="card-body">
+                    <h3 class="card-title">Truck Types Information</h3>
+                    <h5><strong>Title:</strong> <%= truck.titleTruck %>
+                    <button class="btn btn-secondary mb-2 ml-4" onclick="toggleForm('titleForm')">
+                        <i class="bi bi-pencil"></i>
+                      </button></h5>
+                    <div class="w-layout-grid faq_list">
+                        <div class="faq_accordion">                  
+                            <div class="faq_question">        
+                              <h5 class="text-center"><strong></strong> <%= truck.DryVan %></h5>                    
+                              <div
+                              class="faq4_icon w-embed"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#faq1"
+                              aria-expanded="false"
+                            > 
+                            <i class="bi bi-plus"></i>
+                            </div>
+                          </div>
+                            <div id="faq1" class="collapse faq4_answer">
+                                <p class="faq-answer-txt">
+                                    <%= truck.DryVantext %>
+                                    <img src="<%= truck.DryVanpicture %>" alt="trucktypes"  class="new-img">
+                                </p>
+                               
+                                <button class="btn btn-secondary mb-2" onclick="toggleForm('DryVanForm')">
+                                    <i class="bi bi-pencil"></i>
+                                </button> 
+                            </div>
+                            
+                    </div>
+                    </div>
+                    <div class="w-layout-grid faq_list">
+                        <div class="faq_accordion">                  
+                            <div class="faq_question">        
+                              <h5 class="text-center"><strong></strong> <%= truck.Reefer %></h5>                    
+                              <div
+                              class="faq4_icon w-embed"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#faq2"
+                              aria-expanded="false"
+                            > 
+                            <i class="bi bi-plus"></i>
+                            </div>
+                          </div>
+                            <div id="faq2" class="collapse faq4_answer">
+                                <p class="faq-answer-txt">
+                                    <%= truck.Reefertext %>
+                                    <img src="<%= truck.Reeferpicture %>" alt="trucktypes"  class="new-img">
+                                </p>
+                                <button class="btn btn-secondary mb-2" onclick="toggleForm('ReeferForm')">
+                                    <i class="bi bi-pencil"></i>
+                                </button> 
+                            </div>
+
+
+                    </div>
+                    </div>
+                    <div class="w-layout-grid faq_list">
+                        <div class="faq_accordion">                  
+                            <div class="faq_question">        
+                              <h5 class="text-center"><strong></strong> <%= truck.BoxTruck %></h5>                    
+                              <div
+                              class="faq4_icon w-embed"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#faq3"
+                              aria-expanded="false"
+                            > 
+                            <i class="bi bi-plus"></i>
+                            </div>
+                          </div>
+                            <div id="faq3" class="collapse faq4_answer">
+                                <p class="faq-answer-txt">
+                                    <%= truck.BoxTrucktext %>
+                                    <img src="<%= truck.BoxTruckpicture %>" alt="trucktypes"  class="new-img">
+                                </p>
+                                <button class="btn btn-secondary mb-2" onclick="toggleForm('BoxTruckForm')">
+                                    <i class="bi bi-pencil"></i>
+                                </button> 
+                            </div>
+
+
+                    </div>
+                    </div>
+                    <div class="w-layout-grid faq_list">
+                        <div class="faq_accordion">                  
+                            <div class="faq_question">        
+                              <h5 class="text-center"><strong></strong> <%= truck.Flatbed %></h5>                    
+                              <div
+                              class="faq4_icon w-embed"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#faq4"
+                              aria-expanded="false"
+                            > 
+                            <i class="bi bi-plus"></i>
+                            </div>
+                          </div>
+                            <div id="faq4" class="collapse faq4_answer">
+                                <p class="faq-answer-txt">
+                                    <%= truck.Flatbedtext %>
+                                    <img src="<%= truck.Flatbedpicture %>" alt="trucktypes"  class="new-img">
+                                </p>
+                                <button class="btn btn-secondary mb-2" onclick="toggleForm('FlatbedForm')">
+                                    <i class="bi bi-pencil"></i>
+                                </button> 
+                            </div>
+
+
+                    </div>
+                    </div>
+                    <div class="w-layout-grid faq_list">
+                        <div class="faq_accordion">                  
+                            <div class="faq_question">        
+                              <h5 class="text-center"><strong></strong> <%= truck.StepDeck %></h5>                    
+                              <div
+                              class="faq4_icon w-embed"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#faq5"
+                              aria-expanded="false"
+                            > 
+                            <i class="bi bi-plus"></i>
+                            </div>
+                          </div>
+                            <div id="faq5" class="collapse faq4_answer">
+                                <p class="faq-answer-txt">
+                                    <%= truck.StepDecktext %>
+                                    <img src="<%= truck.StepDeckpicture %>" alt="trucktypes"  class="new-img">
+                                </p>
+                                <button class="btn btn-secondary mb-2" onclick="toggleForm('StepDeckForm')">
+                                    <i class="bi bi-pencil"></i>
+                                </button> 
+                            </div>
+
+
+                    </div>
+                    </div>
+                    <div class="w-layout-grid faq_list">
+                        <div class="faq_accordion">                  
+                            <div class="faq_question">        
+                              <h5 class="text-center"><strong></strong> <%= truck.PowerOnly %></h5>                    
+                              <div
+                              class="faq4_icon w-embed"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#faq6"
+                              aria-expanded="false"
+                            > 
+                            <i class="bi bi-plus"></i>
+                            </div>
+                          </div>
+                            <div id="faq6" class="collapse faq4_answer">
+                                <p class="faq-answer-txt">
+                                    <%= truck.PowerOnlytext %>
+                                    <img src="<%= truck.PowerOnlypicture %>" alt="trucktypes"  class="new-img">
+                                </p>
+                                <button class="btn btn-secondary mb-2" onclick="toggleForm('PowerOnlyForm')">
+                                    <i class="bi bi-pencil"></i>
+                                </button> 
+                            </div>
+
+
+                    </div>
+                    </div>
+                    
+
+                    </div>  
+                </div>
+                </div>
+  
+       
+            <div class="col-md-6">
+              <div class="card" style="  margin-top: 170px ;" >
+                <div class="card-body">
+                  <h4 class="card-title">Update Truck Types Information</h4>
+                  <form id="titleForm" action="trucktypes" method="POST"  enctype="multipart/form-data" style="display: none;">
+                    <div class="form-group">
+                      <label for="titleTruck">Title</label>
+                      <input type="text" id="titleTruck" name="titleTruck" class="form-control" value="<%= truck.titleTruck %>" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update Title</button>
+                  </form>
+
+                  <form id="DryVanForm" action="trucktypes" method="POST" enctype="multipart/form-data" style="display: none;">
+                    <div class="form-group">
+                      <label for="DryVan">DRY VAN</label>
+                      <input type="text" id="DryVan" name="DryVan" class="form-control" value="<%= truck.DryVan %>" required>
+                      <label for="DryVantext">DryVantext</label>
+                      <textarea type="text" id="DryVantext" name="DryVantext" class="form-control"  required><%= truck.DryVantext %></textarea>
+                      <input type="file" name="DryVanpicture">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update DRY VAN</button>
+                  </form>
+                  <form id="ReeferForm" action="trucktypes" method="POST" enctype="multipart/form-data" style="display: none;">
+                    <div class="form-group">
+                      <label for="Reefer">REEFER</label>
+                      <input type="text" id="Reefer" name="Reefer" class="form-control" value="<%= truck.Reefer %>" required>
+                      <label for="Reefertext">Reefertext</label>
+                      <textarea type="text" id="Reefertext" name="Reefertext" class="form-control"  required><%= truck.Reefertext %></textarea>
+                      <input type="file" name="Reeferpicture">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update REEFER</button>
+                  </form>
+                  <form id="BoxTruckForm" action="trucktypes" method="POST" enctype="multipart/form-data" style="display: none;">
+                    <div class="form-group">
+                      <label for="BoxTruck">BOX TRUCK</label>
+                      <input type="text" id="BoxTruck" name="BoxTruck" class="form-control" value="<%= truck.BoxTruck %>" required>
+                      <label for="Reefertext">BoxTrucktext</label>
+                      <textarea type="text" id="BoxTrucktext" name="BoxTrucktext" class="form-control"  required><%= truck.BoxTrucktext %></textarea>
+                      <input type="file" name="BoxTruckpicture">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update BOX TRUCK</button>
+                  </form>
+                  <form id="FlatbedForm" action="trucktypes" method="POST" enctype="multipart/form-data" style="display: none;">
+                    <div class="form-group">
+                      <label for="Flatbed">FLATBED</label>
+                      <input type="text" id="Flatbed" name="Flatbed" class="form-control" value="<%= truck.Flatbed %>" required>
+                      <label for="Flatbedtext">Flatbedtext</label>
+                      <textarea type="text" id="Flatbedtext" name="Flatbedtext" class="form-control"  required><%= truck.Flatbedtext %></textarea>
+                      <input type="file" name="Flatbedpicture">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update FLATBED</button>
+                  </form>
+
+                  <form id="StepDeckForm" action="trucktypes" method="POST" enctype="multipart/form-data" style="display: none;">
+                    <div class="form-group">
+                      <label for="StepDeck">STEP DECK</label>
+                      <input type="text" id="StepDeck" name="StepDeck" class="form-control" value="<%= truck.StepDeck %>" required>
+                      <label for="StepDecktext">StepDecktext</label>
+                      <textarea type="text" id="StepDecktext" name="StepDecktext" class="form-control"  required><%= truck.StepDecktext %></textarea>
+                      <input type="file" name="StepDeckpicture">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update STEP DECK</button>
+                  </form>
+                  <form id="PowerOnlyForm" action="trucktypes" method="POST" enctype="multipart/form-data" style="display: none;">
+                    <div class="form-group">
+                      <label for="PowerOnly">POWER ONLY</label>
+                      <input type="text" id="PowerOnly" name="PowerOnly" class="form-control" value="<%= truck.PowerOnly %>" required>
+                      <label for="PowerOnlytext">PowerOnlytext</label>
+                      <textarea type="text" id="PowerOnlytext" name="PowerOnlytext" class="form-control"  required><%= truck.PowerOnlytext %></textarea>
+                      <input type="file" name="PowerOnlypicture">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update POWER ONLY</button>
+                  </form>
+              
+                
+                </div>
+              </div>
+            </div>
+
+          </div>
+       
+
+    
+    </div> 
+     
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024. 
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
+          </div>
+        
+        </footer> 
+
+    </div>
+    </div>   
+
+  </div>
+  <script src="vendors/js/vendor.bundle.base.js"></script>
+  <script src="vendors/chart.js/Chart.min.js"></script>
+  <script src="vendors/datatables.net/jquery.dataTables.js"></script>
+  <script src="vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+  <script src="js/dataTables.select.min.js"></script>
+
+ 
+  <script src="js/off-canvas.js"></script>
+  <script src="js/hoverable-collapse.js"></script>
+  <script src="js/template.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/todolist.js"></script>
+ <script src="js/dashboard.js"></script>
+  <script src="js/Chart.roundedBarCharts.js"></script>
+</body>
+
+</html>
+
+
+
