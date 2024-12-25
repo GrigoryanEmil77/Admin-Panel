@@ -13840,8 +13840,8 @@ padding: 10px;
 flex-grow: 1;
 } 
 .review-image {
-  width: 140px; 
-  height: 98px; 
+  width: 110px; 
+  height: 90px; 
   object-fit: cover;
   position: absolute;
   left: 360px;
