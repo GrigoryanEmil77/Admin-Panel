@@ -694,6 +694,7 @@ function toggleForm(formId) {
 
 
 
+
 document.querySelectorAll('.faq4_icon').forEach((question) => {
   question.addEventListener('click', () => {
     const icon = question.querySelector('.faq4_icon i');

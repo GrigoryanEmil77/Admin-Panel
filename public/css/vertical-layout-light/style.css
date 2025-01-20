@@ -1,121 +1,219 @@
-/*------------------------------------------------------------------
- [Master Stylesheet]
 
-  Project:	SkyDash Admin
-  Version:	1.2.1
--------------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-  ===== Table of Contents =====
+  .thin{
+    font-size: 40px;
+    font-family:initial !important;
+   }
+  
+  .emp h2{
+      font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
+      color:rgb(0, 0, 0);
+      font-size: 45px; 
+  
+    }
 
-  * Bootstrap functions
-  * Template variables
-  * SCSS Compass Functions
-  * Boostrap Main SCSS
-  * Template mixins
-    + Animation Mixins
-    + Badge Mixins
-    + Button Mixins
-    + Miscellaneous Mixins
-    + BlockQuote Mixins
-    + Cards Mixins
-    + Color Functions Mixins
-    + Tooltips
-    + popovers
-  * Core Styles
-    + Reset Styles
-    + Fonts
-    + Functions
-    + Backgrounds
-    + Sidebar
-    + Navbar
-    + Typography
-    + Miscellaneous
-    + Footer
-    + Layouts
-    + Utilities
-    + Demo styles
-  * Components
-    + Accordions
-    + Badges
-    + Bootstrap Alerts
-    + Boostrap Progress
-    + Buttons
-    + Breadcrumbs
-    + Cards
-    + Checkboxes and Radios
-    + Dropdowns
-    + Forms
-    + Google maps
-    + Icons
-    + Loaders
-    + Lists
-    + Modals
-    + Pagination
-    + Popover
-    + Portfolio
-    + Preview
-    + Tables
-    + Tabs
-    + Timeline
-    + Todo List
-    + Tooltips
-    + User Profile
-    + Pricing table
-    + Settings Panel
-  * Email
-    + Mail Sidebar
-    + Mail List Container
-    + Message Content
-  * Plugin Overrides
-    + Ace Editor
-    + Avgrund Popup
-    + Bootstrap Tour
-    + Chartist
-    + CodeMirror
-    + Colcade
-    + Colorpicker
-    + Context Menu
-    + Data Tables
-    + Datepicker
-    + Dropify
-    + Dropzone
-    + Flot chart
-    + Full Calendar
-    + Google Charts
-    + Icheck
-    + Jquery File Upload
-    + Js-grid
-    + Jvectormap
-    + Light Gallery
-    + Listify
-    + No-ui-slider
-    + Owl-carousel
-    + Progressbar-js
-    + Pws-tabs
-    + Quill Editor
-    + Rating
-    + Select2
-    + Summernote Editor
-    + SweetAlert
-    + Switchery
-    + Tags
-    + TinyMCE Editor
-    + Toast
-    + Typeahead
-    + Wysi Editor
-    + X-editable
-    + Wizard
-  * Landing screens
-    + Auth
-  * Horizontal Menu
-    + Horizontal
--------------------------------------------------------------------*/
-/*-------------------------------------------------------------------*/
-/* === Import Bootstrap functions and variables === */
-/*-------------------------------------------------------------------*/
-/* === Import template variables === */
-/*-------------------------------------------------------------------*/
-/* === SCSS Compass Functions === */
+  .emp h2:nth-child(2){
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
+      font-size: 60px;
+      color:purple;   
+      font-weight: 00;
+   
+    }
+.container.elements.mt-3 h2{
+  color:purple;
+  font-size: 40px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
+
+}
+.container.elements.mt-3 span{
+  color:black;
+  font-size: 40px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
+
+}
+.review-card-body {
+  height: 500px;  
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #f8f9fa;
+  border-radius: 20px;
+  box-shadow: 0 3px 1.6rem rgba(0, 0, 0, .1);
+}
+.review-text{
+margin-top: -55px; 
+text-align: center;
+padding: 7px;
+flex-grow: 1;
+} 
+.review-image {
+  width: 85px; 
+  height: 85px; 
+  border-radius: 50%;
+
+}
+.newbut{
+  margin-top: 16%;
+}
+.newbut1{
+  margin-top: 5%;
+}
+.bot1{
+  margin-top: 6%;
+}
+.bot{
+  margin-top: 11%;
+}
+.customer-name {
+  position: relative;
+  top: -40px; 
+  left: 75%;
+  font-weight:bold;
+  transform: translateX(-90%); 
+}
+
+.carousel-inner{
+  padding-top: 30px;
+}
+
+.review-text.expanded {
+  -webkit-line-clamp: unset;
+}
+.carousel.slide{
+  display: none;
+}
+#carouselExampleControls {
+  max-width: 600px; 
+  margin: 0 auto; 
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color:gray!important; 
+}
+.carousel-control-prev, .carousel-control-next {
+  top: 192px !important;
+}
+.carousel-control-prev.new, .carousel-control-next.new {
+  top: 100px !important;
+}
+
+
+@media (max-width: 1248px) {
+  .element {
+    text-align: start;
+    margin: 0;
+  }
+  }  
+  @media (max-width: 1044px){
+    .row.custom{
+      display: none;
+    }
+    .carousel.slide{
+      display: block;
+    }
+    .row section{
+      flex-wrap: wrap;
+    }
+    .card-bodys {
+      height: 100px; 
+    }
+    .card-body.review-card-body {
+      height:280px !important;
+    }
+    .card-body.review-card-body.head {
+      height:140px !important;
+    }
+  
+  } 
+  @media (max-width: 104px){
+ 
+    }
+ 
+
+@media (max-width: 767px) {
+  .custom-margin {
+    margin-top: 0px !important;
+  }
+   .shift-down{
+    margin-top: 5%;
+   } 
+   .carousel-control-prev, .carousel-control-next {
+    top: 270px !important;
+  } 
+    #customerReviewsCarousel .carousel-inner .carousel-item {
+      display: flex;
+    }
+   .card-body.review-card-body {
+      height:350px !important;
+    }
+}
+
+@media (max-width: 420px) {
+ 
+     .row.justify-content-center.elements {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; 
+     }
+    
+.card-body.review-card-body{
+      height:410px !important;
+    }
+
+  }
+ 
+ 
+@media (max-width: 380px) {
+
+  .card-body.review-card-body{
+    height:390px !important;
+  }
+}
+@media (max-width: 370px) {
+
+  .card-body.review-card-body{
+    height:400px !important;
+  }
+}
+@media (max-width: 353px) {
+
+  .card-body.review-card-body{
+    height:420px !important;
+  }
+}
+  
+  @media (max-width: 326px) {
+    
+    .card-body.review-card-body{
+      height:440px !important;
+    }
+    
+
+  }
+  @media (max-width: 316px) {
+    
+    .card-body.review-card-body{
+      height:500px !important;
+    }
+    
+
+  }
+  @media (max-width: 260px) {
+    .container-fluid-video {
+      padding-top: 50%;
+    
+    }
+    .card-body.review-card-body{
+      height:600px !important;
+    }
+    
+    }
+
+
+
+      
+  
 @-moz-keyframes flash {
   0% {
     opacity: 1;
@@ -12919,6 +13017,7 @@ input[type="button"].btn-block {
   opacity: 0;
 }
 
+
 .custom-control-input:checked ~ .custom-control-label::before {
   color: #fff;
   border-color: #007bff;
@@ -13445,7 +13544,10 @@ input[type="button"].btn-block {
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 1rem;
+
+
 }
+
 
 .navbar .container,
 .navbar .container-fluid, .navbar .container-sm, .navbar .container-md, .navbar .container-lg, .navbar .container-xl {
@@ -13457,13 +13559,15 @@ input[type="button"].btn-block {
 
 .navbar-brand {
   display: inline-block;
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
+  padding-top: 0.3135rem;
+  padding-bottom: 0.3135rem;
   margin-right: 1rem;
-  font-size: 1.25rem;
+  font-size: 1000px;
   line-height: inherit;
   white-space: nowrap;
 }
+
+
 
 .navbar-brand:hover, .navbar-brand:focus {
   text-decoration: none;
@@ -13834,26 +13938,33 @@ h5{
   box-shadow: 0 3px 1.6rem rgba(0, 0, 0, .1);
 }
 .review-text{
-margin-top: 90px; 
+margin-top: 10px; 
 text-align: center;
 padding: 10px;
 flex-grow: 1;
 } 
 .review-image {
-  width: 110px; 
-  height: 90px; 
-  object-fit: cover;
-  position: absolute;
-  left: 360px;
 
+  object-fit: cover;
+  position: relative;
+  left: 60px;
+flex-wrap: wrap;
 }
 .new-img{
-  width: 160px; 
+  width: 100px; 
   height: 70px; 
   object-fit: cover;
-  position: absolute;
-  left: 300px;
+  position: relative;
+  left: 30px;
 }
+.neww-img{
+  width: 70px; 
+  height: 50px; 
+  object-fit: cover;
+  position: relative;
+  left: 30px;
+}
+
 .customer-name {
   position: absolute;
   top: 50px; 
@@ -13873,9 +13984,10 @@ flex-grow: 1;
 
 .card {
   position: relative;
+  width: 100% !important;
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction:row;
   min-width: 0;
   word-wrap: break-word;
   background-color: #fff;
@@ -15873,6 +15985,9 @@ button.bg-light:focus,
 
 .bg-dark, .settings-panel .color-tiles .tiles.dark {
   background-color: #282f3a !important;
+}
+.bg-purple, .settings-panel .color-tiles .tiles.tiles.purple {
+  background-color: purple !important;
 }
 
 a.bg-dark:hover, .settings-panel .color-tiles a.tiles.dark:hover, a.bg-dark:focus, .settings-panel .color-tiles a.tiles.dark:focus,
@@ -20971,8 +21086,14 @@ code {
 .alert-fill-dark .alert-link {
   color: #e6e6e6;
 }
+.btn-secondary {
 
-/* Bootstrap Progress */
+    --bs-btn-hover-bg:purple !important;;
+    --bs-btn-hover-border-color:purple !important;
+
+
+}
+
 .progress {
   border-radius: 7px;
   height: 8px;
@@ -28935,18 +29056,21 @@ div.tagsinput span.tag a {
 
 .navbar .navbar-brand-wrapper .navbar-brand img {
   max-width: 100%;
-  height: 34px;
+  height: 42px;
   margin: auto;
   vertical-align: middle;
-}
 
+}
+.bg-info, .settings-panel .color-tiles .tiles.info {
+  background-color: #8328ba !important;
+}
 .navbar .navbar-brand-wrapper .brand-logo-mini {
   padding-left: 0;
   text-align: center;
 }
 
 .navbar .navbar-brand-wrapper .brand-logo-mini img {
-  width: calc(70px - 30px);
+  width: calc(100px - 70px);
   max-width: 100%;
   margin: auto;
 }
@@ -28971,13 +29095,17 @@ div.tagsinput span.tag a {
     padding-right: 11px;
   }
 }
+.bg-primary, .settings-panel .color-tiles .tiles.primary {
+    background-color: #8328ba !important;
+}
 
 .navbar .navbar-menu-wrapper .navbar-toggler {
   border: 0;
-  color: inherit;
-  font-size: 1.25rem;
+  color:purple;
+  font-size: 2rem;
   padding: 0;
   border-radius: 0;
+box-shadow: none;
 }
 
 .navbar .navbar-menu-wrapper .navbar-toggler:not(.navbar-toggler-right) {

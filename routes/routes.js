@@ -15,7 +15,6 @@ const Services = require('../model/services');
 const Request = require('../model/request');
 const VideoTypesAll = require('../model/videoheader')
 const TruckTypesStop = require('../model/truckstop')
-// const MessageTypes = require('../model/message')
 const authenticateToken = require('../middleware/auth'); 
 const upload = require('../middleware/upload'); 
 const sgMail = require('@sendgrid/mail')
@@ -579,11 +578,11 @@ router.get('/questions', authenticateToken, async (req, res) => {
 router.post('/questions', upload.single('picture'), async (req, res) => {
     try {
     
-        const { titlefirst,titlesecond,questions1,questions2,questions3,questions4,questions5,
-                answer1,answer2,answer3,answer4,answer5} = req.body;
+        const { titlefirst,titlesecond,questions1,questions2,questions3,questions4,questions5,questions6,
+                answer1,answer2,answer3,answer4,answer5,answer6} = req.body;
         const picture = req.file ? '/images/' + req.file.filename : null;
-        const updatedFields = {titlefirst,titlesecond,questions1,questions2,questions3,questions4,questions5,
-                               answer1,answer2,answer3,answer4,answer5};
+        const updatedFields = {titlefirst,titlesecond,questions1,questions2,questions3,questions4,questions5,questions6,
+                               answer1,answer2,answer3,answer4,answer5,answer6};
         if (picture) {
             updatedFields.picture = picture;
         }
@@ -885,50 +884,6 @@ router.post('/upload-videoheader', upload.fields([
         res.status(500).send('Server error: ' + error.message);
     }
 });
-
-
-
-
-
-// router.get('/message', authenticateToken, async (req, res) => {
-//     try {
-//         const messageId = req.message ? req.message.id : "675f381d5d1b14643c7b4c3a" ;
-//         const message = await MessageTypes.findById(messageId);
-//         if (!message) {
-//             return res.status(404).send('About not found');
-//         }
-//         res.render('message', { message});
-//     } catch (error) {
-//         console.error('Error fetching about:', error);
-//         res.status(500).send('Server error');
-//     }
-// });
-// router.post('/message', upload.single('attachment'), async (req, res) => {
-//     try {
-//         const { to,name,email,information,number,from,titlefirst,titlesecond } = req.body;
-//         const attachment = req.file ? '/attachments/' + req.file.filename : null;
-//         const updatedFields = { to,name,email,information,number,from,titlefirst,titlesecond  };
-        
-//         if (attachment) {
-//             updatedFields.attachment = attachment;
-//         }
-
-//         const message = await MessageTypes.findByIdAndUpdate(
-//             req.message ? req.message.id : "675f381d5d1b14643c7b4c3a",
-//             updatedFields,
-//             { new: true }
-//         );
-
-//         if (!message) {
-//             return res.status(404).send('Message not found');
-//         }
-//         res.render('message', { message, successMessage: 'Message updated successfully' });
-//     } catch (error) {
-//         console.error('Error updating message information:', error);
-//         res.status(500).send('Server error');
-//     }
-// });
-
 
 
 router.get('/register', authenticateToken, async (req, res) => {

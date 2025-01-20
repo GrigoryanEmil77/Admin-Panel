@@ -30,6 +30,10 @@ const questionsInfoSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  questions6: {
+    type: String,
+    required: true
+  },
   answer1: {
     type: String,
     required: true
@@ -47,6 +51,10 @@ const questionsInfoSchema = new mongoose.Schema({
     required: true
   },
   answer5: {
+    type: String,
+    required: true
+  },
+  answer6: {
     type: String,
     required: true
   },

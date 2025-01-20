@@ -1,35 +1,29 @@
-</body>
-</html>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Dispatch-assist admin</title>
-  <link rel="stylesheet" href="vendors/feather/feather.css">
-  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
-  <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
-  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css">
-  <link rel="stylesheet" href="css/vertical-layout-light/style.css">
-  <link rel="shortcut icon" href="/images/favicon.ico"/>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap" rel="stylesheet">   
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" /> 
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script> 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">  
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Dispatch-assist admin</title>
+    <link rel="stylesheet" href="vendors/feather/feather.css" />
+    <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css" />
+    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css" />
+    <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css" />
+    <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css" />
+    <link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css" />
+    <link rel="stylesheet" href="css/vertical-layout-light/style.css" />
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
 <style>
     .sidebar .nav .nav-item.active > .nav-link{
     background-color:purple;
@@ -40,12 +34,12 @@
  
 </style>
 <body>
+ 
   <div class="container-scroller">
 
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="http://dispatch-assist.com/"  target="_blank" rel="noopener noreferrer"><img src="images/logo1-1.jpg"  class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="http://dispatch-assist.com/"  target="_blank" rel="noopener noreferrer"><img src="images/logo1-1.jpg" alt="logo" /></a>
+        <a class="navbar-brand" href="http://dispatch-assist.com/"  target="_blank" rel="noopener noreferrer"><img src="images/logo1-1.jpg" alt="logo" /></a>
      
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
@@ -54,14 +48,7 @@
         </button>
         <ul class="navbar-nav mr-lg-2">
           <li class="nav-item nav-search d-none d-lg-block">
-            <div class="input-group">
-              <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
-                <span class="input-group-text" id="search">
-                  <i class="icon-search"></i>
-                </span>
-              </div>
-              <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
-            </div>
+          
           </li>
         </ul>
         <ul class="navbar-nav navbar-nav-right">
@@ -100,26 +87,14 @@
               </a>
             </div>
           </li>
-          <li class="nav-item nav-profile dropdown">
-                                    
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item">
-                <i class="ti-settings text-primary"></i>
-                Settings
-              </a>
-              <a href="/logout" class="dropdown-item">
-                <i class="ti-power-off text-primary"></i>
-                Logout
-                
-              </a>
-            </div>
-          </li>
-      
+        
+         
         </ul>
-    
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="icon-menu"></span>
+        </button>
       </div>
     </nav>
-    
     <div class="container-fluid page-body-wrapper">
       <div class="theme-setting-wrapper">
         <div id="settings-trigger"><i class="ti-settings"></i></div>
@@ -139,7 +114,6 @@
           </div>
         </div>
       </div>
-   
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
@@ -203,7 +177,6 @@
         <span class="menu-title">Request A CallBack</span>
     </a>
 </li>  
-       
         <li class="nav-item">
             <a class="nav-link" href="/contactinfo">
                 <i class="icon-layout menu-icon"></i>
@@ -230,6 +203,7 @@
       </a>
   </li>
 
+    
         
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
@@ -272,136 +246,195 @@
           </li>
         </ul>
       </nav>
-             <div class="main-panel">
-              <div class="content-wrapper">
-                <div class="content-wrapper">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="card">
-                        <div class="card-body">
-                          <h3 class="card-title">Contact Information</h3>
-                          <h5><strong>Title:</strong> <%= contact.title %>
-                            <button  class="btn btn-secondary mb-2 ml-4" onclick="toggleForm('titleForm')">
-                              <i class="bi bi-pencil"></i>
-                            </button></h5>
-                          <div class="faq_accordion mt-2">                  
-                            <div class="faq_question">
-                              <div class="text-size-medium-4 text-weight-bold"><strong>Gmail:</strong> <%= contact.gmail %></div>
-                              <button  class="btn btn-secondary mb-2" onclick="toggleForm('gmailForm')">
-                                <i class="bi bi-pencil"></i>
-                              </button>
-                          </div>
-                          </div>
-                          <div class="faq_accordion mt-2">                  
-                            <div class="faq_question">
-                              <div class="text-size-medium-4 text-weight-bold"><strong>Phone:</strong> <%= contact.phone %></div>
-                              <button  class="btn btn-secondary mb-2" onclick="toggleForm('phoneForm')">
-                                <i class="bi bi-pencil"></i>
-                              </button>
-                          </div>
-                          </div>
-                          <div class="faq_accordion mt-2">                  
-                            <div class="faq_question">
-                              <div class="text-size-medium-4 text-weight-bold"><strong>Location:</strong> <%= contact.location %></div>
-                              <button  class="btn btn-secondary mb-2" onclick="toggleForm('locationForm')">
-                                <i class="bi bi-pencil"></i>
-                              </button>
-                          </div>
-                          </div>
-                          <div class="faq_accordion mt-2">                  
-                            <div class="faq_question">
-                              <div class="text-size-medium-4 text-weight-bold"><strong>locationFlorida:</strong> <%= contact.locationFlorida %></div>
-                              <button  class="btn btn-secondary mb-2" onclick="toggleForm('locationFloridaForm')">
-                                <i class="bi bi-pencil"></i>
-                              </button>
-                          </div>
-                          </div>
-                          <div class="faq_accordion mt-2">                  
-                            <div class="faq_question">
-                              <strong>Contact Logo:</strong>
-                          <div style="max-width: 300px; margin: auto;">
-                            <img src="<%= contact.picture %>" class="img-fluid rounded"  style="max-width: 50%; height: 10%;">
-                          </div>
-                          <button  class="btn btn-secondary mb-2" onclick="toggleForm('pictureForm')">
-                            <i class="bi bi-pencil"></i>
-                          </button>
-                          </div>
-                          </div>
-                        </div>
-                      </div>
+     
+         <div class="container elements mt-3" id="Customer" >
+          <h3 class="card-title">Contact Information</h3>
+          <h5><strong>Title:</strong> <%= contact.title %>
+            <button  class="btn btn-secondary mb-2 ml-4" onclick="toggleForm('titleForm')">
+              <i class="bi bi-pencil"></i>
+            </button></h5>
+            <div class="container elements mt-3">        
+              <h2 class="text-center mb-4 elements"  ><%= contact.title %></h2>
+              </div>
+          <div class="row custom mt-5 elements">
+            <div class="col-md-4 elements" >
+                <div class="card-body review-card-body" >
+                  <div class="text-size-medium-4 text-weight-bold"><strong>Gmail:</strong> <%= contact.gmail %></div>
+                  <button  class="btn btn-secondary mb-2" style="margin-top: 3%;" onclick="toggleForm('gmailForm')">
+                    <i class="bi bi-pencil"></i>
+                  </button>
+              </div>
+            </div>
+            <div class="col-md-4 elements" >
+              <div class="card-body review-card-body" >
+                <div class="text-size-medium-4 text-weight-bold"><strong>Phone:</strong> <%= contact.phone %></div>
+                <button  class="btn btn-secondary mb-2" style="margin-top: 3%;" onclick="toggleForm('phoneForm')">
+                  <i class="bi bi-pencil"></i>
+                </button>
+            </div>
+          </div>
+          <div class="col-md-4 elements" >
+            <div class="card-body review-card-body" >
+              <div class="text-size-medium-4 text-weight-bold"><strong>Location:</strong> <%= contact.location %></div>
+              <button  class="btn btn-secondary mb-2" style="margin-top: 3%;" onclick="toggleForm('locationForm')">
+                <i class="bi bi-pencil"></i>
+              </button>
+          </div>
+        </div>
+        <div class="col-md-4 elements py-3" >
+          <div class="card-body review-card-body" >
+            <div class="text-size-medium-4 text-weight-bold"><strong>locationFlorida:</strong> <%= contact.locationFlorida %></div>
+            <button  class="btn btn-secondary mb-2" style="margin-top: 10%;" onclick="toggleForm('locationFloridaForm')">
+              <i class="bi bi-pencil"></i>
+            </button>
+        </div>
+      </div>
+      <div class="col-md-4 elements py-3" >
+        <div class="card-body review-card-body" >
+          <div >
+            <img src="<%= contact.picture %>" class="img-fluid rounded"  style="width: 150px; height: 70px;margin-top: 8px;">
+          </div>
+          <button  class="btn btn-secondary mb-2" style="margin-top: 3%;" onclick="toggleForm('pictureForm')">
+            <i class="bi bi-pencil"></i>
+          </button>
+      </div>
+    </div>
+            </div>
+           
+  
+            <div id="carouselExampleControls" class="carousel slide elements mt-5" data-ride="carousel">
+              <div class="carousel-inner elements"  >
+                <div class="carousel-item active elements"  >
+                  <div class="card-body review-card-body head" >
+                    <div class="text-size-medium-4 text-weight-bold"><strong>Gmail:</strong> <%= contact.gmail %></div>
+                    <div class="bot">
+                    <button  class="btn btn-secondary mb-2" onclick="toggleForm('gmailForm')">
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                  </div>
+                </div>
+                </div>
+                <div class="carousel-item elements"  >
+                  <div class="card-body review-card-body head" >
+                    <div class="text-size-medium-4 text-weight-bold"><strong>Phone:</strong> <%= contact.phone %></div>
+                    <div class="bot">
+                    <button  class="btn btn-secondary mb-2" onclick="toggleForm('phoneForm')">
+                      <i class="bi bi-pencil"></i>
+                    </button>
                     </div>
-            
-                    <div class="col-md-6">
-                      <div class="card" style="margin-top: 110px;">
-                        <div class="card-body">
-                          <h4 class="card-title">Update Contact</h4>
-          
-                          <form id="titleForm" action="/update-contact" method="POST" style="display: none;">
-                            <div class="form-group">
-                              <label for="title">Title</label>
-                              <input type="text" id="title" name="title" class="form-control" value="<%= contact.title %>" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Update Title</button>
-                          </form>
+                </div>
+                </div>
+                <div class="carousel-item elements"  >
+                  <div class="card-body review-card-body head" >
+                    <div class="text-size-medium-4 text-weight-bold"><strong>Location:</strong> <%= contact.location %></div>
+                    <div class="bot">
+                    <button  class="btn btn-secondary mb-2" onclick="toggleForm('locationForm')">
+                      <i class="bi bi-pencil"></i>
+                    </button>
+                    </div>
+                </div>
+                </div>
+                <div class="carousel-item elements"  >
+                  <div class="card-body review-card-body head" >
+                    <div class="text-size-medium-4 text-weight-bold"><strong>locationFlorida:</strong> <%= contact.locationFlorida %></div>
+                    <div class="bot">
+                    <button  class="btn btn-secondary mb-2"  onclick="toggleForm('locationFloridaForm')">
+                      <i class="bi bi-pencil"></i>
+                    </button>
+                  </div>
+                </div>
+                </div>
+                <div class="carousel-item elements"  >
+                  <div class="card-body review-card-body head" >
+                    <div >
+                      <img src="<%= contact.picture %>" class="img-fluid rounded"  style="width: 150px; height: 80px;">
+                    </div>
+                    <div class="bot1">
+                    <button  class="btn btn-secondary mb-2" onclick="toggleForm('pictureForm')">
+                      <i class="bi bi-pencil"></i>
+                    </button>
+                    </div>
+                </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev new" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon"  aria-hidden="true"></span>
+                
+              </a>
+              <a class="carousel-control-next new" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon  " aria-hidden="true"></span>
+               
+              </a>
+            </div>
+                
+                <div class="col-md-6">
+                  <div class="card" style="margin-top: 110px;">
+                    <div class="card-body">
+                      <h4 class="card-title">Update Contact</h4>
       
-                          <form id="gmailForm" action="/update-contact" method="POST" style="display: none;">
-                            <div class="form-group">
-                              <label for="gmail">Gmail</label>
-                              <input type="email" id="gmail" name="gmail" class="form-control" value="<%= contact.gmail %>" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Update Gmail</button>
-                          </form>
-            
-                    
-                          <form id="phoneForm" action="/update-contact" method="POST" style="display: none;">
-                            <div class="form-group">
-                              <label for="phone">Phone</label>
-                              <input type="text" id="phone" name="phone" class="form-control" value="<%= contact.phone %>" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Update Phone</button>
-                          </form>
-          
-                          <form id="locationForm" action="/update-contact" method="POST" style="display: none;">
-                            <div class="form-group">
-                              <label for="location">Location</label>
-                              <input type="text" id="location" name="location" class="form-control" value="<%= contact.location %>" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Update Location</button>
-                          </form>
-                          <form id="locationFloridaForm" action="/update-contact" method="POST" style="display: none;">
-                            <div class="form-group">
-                              <label for="locationFlorida">Location</label>
-                              <input type="text" id="locationFlorida" name="locationFlorida" class="form-control" value="<%= contact.locationFlorida %>" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Update Location</button>
-                          </form>
-
-
-                          <form id="pictureForm" action="/update-contact" method="POST" enctype="multipart/form-data" style="display: none;">
-                            <div class="form-group">
-                              <label for="picture">Contact Logo</label>
-                              <input type="file" id="picture" name="picture" class="form-control-file">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Update Logo</button>
-                          </form>
+                      <form id="titleForm" action="/update-contact" method="POST" style="display: none;">
+                        <div class="form-group">
+                          <label for="title">Title</label>
+                          <input type="text" id="title" name="title" class="form-control" value="<%= contact.title %>" required>
                         </div>
-                      </div>
+                        <button type="submit" class="btn btn-primary">Update Title</button>
+                      </form>
+  
+                      <form id="gmailForm" action="/update-contact" method="POST" style="display: none;">
+                        <div class="form-group">
+                          <label for="gmail">Gmail</label>
+                          <input type="email" id="gmail" name="gmail" class="form-control" value="<%= contact.gmail %>" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update Gmail</button>
+                      </form>
+        
+                
+                      <form id="phoneForm" action="/update-contact" method="POST" style="display: none;">
+                        <div class="form-group">
+                          <label for="phone">Phone</label>
+                          <input type="text" id="phone" name="phone" class="form-control" value="<%= contact.phone %>" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update Phone</button>
+                      </form>
+      
+                      <form id="locationForm" action="/update-contact" method="POST" style="display: none;">
+                        <div class="form-group">
+                          <label for="location">Location</label>
+                          <input type="text" id="location" name="location" class="form-control" value="<%= contact.location %>" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update Location</button>
+                      </form>
+                      <form id="locationFloridaForm" action="/update-contact" method="POST" style="display: none;">
+                        <div class="form-group">
+                          <label for="locationFlorida">Location</label>
+                          <input type="text" id="locationFlorida" name="locationFlorida" class="form-control" value="<%= contact.locationFlorida %>" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update Location</button>
+                      </form>
+
+
+                      <form id="pictureForm" action="/update-contact" method="POST" enctype="multipart/form-data" style="display: none;">
+                        <div class="form-group">
+                          <label for="picture">Contact Logo</label>
+                          <input type="file" id="picture" name="picture" class="form-control-file">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update Logo</button>
+                      </form>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            
-
-            
-
-
+          </div>
         </div>
         
-     
+
+            </div>
+  
+            
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024. 
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
             <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
           </div>
         

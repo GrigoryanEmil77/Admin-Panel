@@ -1,5 +1,3 @@
- </body>
-</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,12 +24,12 @@
  
 </style>
 <body>
+  
   <div class="container-scroller">
 
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="http://dispatch-assist.com/"  target="_blank" rel="noopener noreferrer"><img src="images/logo1-1.jpg"  class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="http://dispatch-assist.com/"  target="_blank" rel="noopener noreferrer"><img src="images/logo1-1.jpg" alt="logo" /></a>
+        <a class="navbar-brand" href="http://dispatch-assist.com/"  target="_blank" rel="noopener noreferrer"><img src="images/logo1-1.jpg" alt="logo" /></a>
      
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
@@ -40,14 +38,7 @@
         </button>
         <ul class="navbar-nav mr-lg-2">
           <li class="nav-item nav-search d-none d-lg-block">
-            <div class="input-group">
-              <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
-                <span class="input-group-text" id="search">
-                  <i class="icon-search"></i>
-                </span>
-              </div>
-              <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
-            </div>
+  
           </li>
         </ul>
         <ul class="navbar-nav navbar-nav-right">
@@ -86,29 +77,14 @@
               </a>
             </div>
           </li>
-          <li class="nav-item nav-profile dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="<%= admin.picture %>" alt="profile"/>
-              <!-- <h1><%= admin.phone %></h1> -->
-            </a>                                             
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item">
-                <i class="ti-settings text-primary"></i>
-                Settings
-              </a>
-              <a href="/logout" class="dropdown-item">
-                <i class="ti-power-off text-primary"></i>
-                Logout
-                
-              </a>
-            </div>
-          </li>
-     
+        
+         
         </ul>
-    
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="icon-menu"></span>
+        </button>
       </div>
     </nav>
-    
     <div class="container-fluid page-body-wrapper">
       <div class="theme-setting-wrapper">
         <div id="settings-trigger"><i class="ti-settings"></i></div>
@@ -128,7 +104,6 @@
           </div>
         </div>
       </div>
-   
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
@@ -149,7 +124,6 @@
               <span class="menu-title">Navbar</span>
           </a>
       </li>
-      
           <li class="nav-item">
             <a class="nav-link" href="/homeinfo">
                 <i class="icon-layout menu-icon"></i>
@@ -186,14 +160,13 @@
           <i class="icon-layout menu-icon"></i>
           <span class="menu-title">Customers</span>
       </a>
-  </li> 
+  </li>   
   <li class="nav-item">
     <a class="nav-link" href="/request">
         <i class="icon-layout menu-icon"></i>
         <span class="menu-title">Request A CallBack</span>
     </a>
 </li>  
-         
         <li class="nav-item">
             <a class="nav-link" href="/contactinfo">
                 <i class="icon-layout menu-icon"></i>
@@ -206,19 +179,21 @@
               <span class="menu-title">Follow</span>
           </a>
       </li>
-   
+      <li class="nav-item">
+        <a class="nav-link" href="/truckStop">
+            <i class="icon-layout menu-icon"></i>
+            <span class="menu-title">TruckStop</span>
+        </a>
+    </li>
+    
     <li class="nav-item">
       <a class="nav-link" href="/upload-videoheader">
           <i class="icon-layout menu-icon"></i>
           <span class="menu-title">Dispatch Video</span>
       </a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/message">
-        <i class="icon-layout menu-icon"></i>
-        <span class="menu-title">Request A CallBack</span>
-    </a>
-</li>
+
+    
     
         
           <li class="nav-item">
@@ -332,7 +307,7 @@
      
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024. 
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
             <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
           </div>
         
