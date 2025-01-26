@@ -13,6 +13,10 @@ const navbarInfoSchema = new mongoose.Schema({
     type:String,
     required:true
   },
+  trucktypes:{
+    type:String,
+    required:true
+  },
   testimonials: {
     type: String,
     required: true

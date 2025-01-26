@@ -322,10 +322,10 @@ router.get('/navbarinfo', authenticateToken, async (req, res) => {
 
 router.post('/navbarinfo', upload.single('picture'), async (req, res) => {
     try {
-        const { home, about, services, faqs, testimonials, contact, setup } = req.body;
+        const { home, about, services, faqs, testimonials,trucktypes, contact, setup } = req.body;
 
     
-        const updatedFields = { home, about, services, faqs, testimonials, contact, setup };
+        const updatedFields = { home, about, services, faqs, testimonials,trucktypes, contact, setup };
 
         if (req.file) {
             const baseUrl = `${req.protocol}://${req.get('host')}/images`;

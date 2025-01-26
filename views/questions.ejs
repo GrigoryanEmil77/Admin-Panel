@@ -385,32 +385,8 @@
                         </button> 
                 </div>
               </div>
-                <div class="faq_accordion">
-                  <div class="faq_question">
-                    <div class="text-size-medium-4 text-weight-bold"><%= questions.questions6 %></div>
-                    <div
-                    class="faq4_icon w-embed"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#faq6"
-                    aria-expanded="false"
-                  > 
-                  <i class="bi bi-plus"></i>
-                  </div>
-                    </button>
-                </div>
-                <div id="faq6" class="collapse faq4_answer">
-                  <p class="faq-answer-txt">
-                    <%= questions.answer6 %>
+               
                   
-                        </p>
-                        <button class="btn btn-secondary mb-2" onclick="toggleForm('questions6Form')">
-                            <i class="bi bi-pencil"></i>
-                        </button> 
-                </div>
-                </div>
-                
-         
-                 
                 </div>
             
                 </div>
@@ -490,16 +466,7 @@
                     <button type="submit" class="btn btn-primary">Update Questions</button>
                   </form>
 
-                  <form id="questions6Form" action="questions" method="POST" style="display: none;">
-                    <div class="form-group">
-                      <label for="questions6">Question6</label>
-                      <input type="text" id="questions6" name="questions6" class="form-control" value="<%= questions.questions6 %>" required>
-                      <label for="answer6">Answer6</label>
-                      <input type="text" id="answer6" name="answer6" class="form-control" value="<%= questions.answer6 %>" required>
-                 
-                    </div>
-                    <button type="submit" class="btn btn-primary">Update Questions</button>
-                  </form>
+          
                   
                 </div>
               </div>

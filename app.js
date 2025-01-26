@@ -27,9 +27,7 @@ app.use('/videos', express.static(path.join(__dirname, 'public/videos')));
 
 app.use('/', routes); 
 
-
 app.use(cors({ origin: 'http://localhost:3001' }));
-
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

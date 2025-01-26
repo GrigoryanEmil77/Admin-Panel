@@ -283,6 +283,14 @@
                   </div>
                   <div class="faq_accordion mt-2">                  
                     <div class="faq_question">
+                      <div class="text-size-medium-4 text-weight-bold"> <%= navbar.trucktypes %></div>
+                      <button  class="btn btn-secondary mb-2" onclick="toggleForm('trucktypesForm')">
+                        <i class="bi bi-pencil"></i>
+                      </button>
+                  </div>
+                </div>
+                  <div class="faq_accordion mt-2">                  
+                    <div class="faq_question">
                       <div class="text-size-medium-4 text-weight-bold"> <%= navbar.faqs%></div>
                       <button  class="btn btn-secondary mb-2" onclick="toggleForm('faqsForm')">
                         <i class="bi bi-pencil"></i>
@@ -360,6 +368,14 @@
                           </div>
                           <button type="submit" class="btn btn-primary">Update Services</button>
                         </form>
+                        <form id="trucktypesForm" action="/navbarinfo" method="POST" style="display: none;">
+                          <div class="form-group">
+                            <label for="Truck Types">Truck Types</label>
+                            <input type="text" id="trucktypes" name="trucktypes" class="form-control" value="<%= navbar.trucktypes %>" required>
+                          </div>
+                          <button type="submit" class="btn btn-primary">Update Truck Types</button>
+                        </form>
+       
        
                         <form id="faqsForm" action="/navbarinfo" method="POST" style="display: none;">
                           <div class="form-group">
