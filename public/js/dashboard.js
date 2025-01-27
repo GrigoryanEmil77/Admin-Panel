@@ -683,7 +683,6 @@ $('#example tbody').on('click', 'td.details-control', function () {
 
 function toggleForm(formId) {
   const form = document.getElementById(formId);
-  // Toggle visibility
   if (form.style.display === "none" || form.style.display === "") {
     form.style.display = "block";
   } else {

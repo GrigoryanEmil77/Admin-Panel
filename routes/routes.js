@@ -560,8 +560,6 @@ router.post('/truckStop', upload.fields([
     }
 });
 
-
-
 router.get('/questions', authenticateToken, async (req, res) => {
     try {
         const questionsId = req.questions ? req.questions.id : "675f308d5d1b14643c7b4c32" ;
@@ -628,7 +626,7 @@ router.post('/services', upload.fields([
     { name: 'picture7' }
 ]), async (req, res) => {
     try {
-        console.log("Files received:", req.files);  // Log to debug
+        console.log("Files received:", req.files); 
 
         const {
             titleServices,
