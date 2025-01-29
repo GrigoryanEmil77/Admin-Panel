@@ -29075,9 +29075,9 @@ div.tagsinput span.tag a {
   margin: auto;
 }
 .imig{
-width: 125px !important;
+width: 145px !important;
 height: 60px !important;
-padding-left: 8px !important;
+padding-left: 5px !important;
 }
 
 .navbar .navbar-menu-wrapper {
@@ -30842,7 +30842,7 @@ box-shadow: none;
 }
 @media (max-width: 991px) {
     .navbar .navbar-menu-wrapper {
-        width: calc(100% - 125px) !important;
+        width: calc(100% - 145px) !important;
         padding-left: 15px !important;
         padding-right: 11px !important;
     }
