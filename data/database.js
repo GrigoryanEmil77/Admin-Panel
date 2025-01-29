@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Admin = require('../model/admins'); 
 
 const uri = "mongodb+srv://admin-panel:Zq0jaerHMMjENhsS@cluster0.myade.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+
 async function connectToDatabase() {
   try {
     await mongoose.connect(uri, {

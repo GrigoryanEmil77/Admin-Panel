@@ -1,23 +1,23 @@
 
   .thin{
-    font-size: 40px;
+    font-size: 30px;
     font-family:initial !important;
    }
   
   .emp h2{
       font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
       color:rgb(0, 0, 0);
-      font-size: 45px; 
+      font-size: 33px; 
   
     }
 
   .emp h2:nth-child(2){
       font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
-      font-size: 60px;
+      font-size: 42px;
       color:purple;   
-      font-weight: 00;
    
     }
+
 .container.elements.mt-3 h2{
   color:purple;
   font-size: 40px;
@@ -25,7 +25,7 @@
 
 }
 .container.elements.mt-3 span{
-  color:black;
+  color:purple;
   font-size: 40px;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
 
@@ -29031,7 +29031,7 @@ div.tagsinput span.tag a {
   -webkit-transition: width 0.25s ease, background 0.25s ease;
   -moz-transition: width 0.25s ease, background 0.25s ease;
   -ms-transition: width 0.25s ease, background 0.25s ease;
-  width: 235px;
+  width: 205px;
   height: 60px;
 }
 
@@ -29073,6 +29073,11 @@ div.tagsinput span.tag a {
   width: calc(100px - 70px);
   max-width: 100%;
   margin: auto;
+}
+.imig{
+width: 125px !important;
+height: 60px !important;
+padding-left: 8px !important;
 }
 
 .navbar .navbar-menu-wrapper {
@@ -30835,5 +30840,11 @@ box-shadow: none;
     display: none;
   }
 }
-
+@media (max-width: 991px) {
+    .navbar .navbar-menu-wrapper {
+        width: calc(100% - 125px) !important;
+        padding-left: 15px !important;
+        padding-right: 11px !important;
+    }
+}
 /*# sourceMappingURL=../maps/vertical-layout-light/style.css.map */
