@@ -17,6 +17,9 @@
       color:purple;   
    
     }
+    .tiles.info {
+      background-color: #248AFD !important;
+  }
 
 .container.elements.mt-3 h2{
   color:purple;
@@ -15933,7 +15936,7 @@ button.bg-success:focus,
 }
 
 .bg-info, .settings-panel .color-tiles .tiles.info {
-  background-color: #248AFD !important;
+  background-color: #248AFD  !important;
 }
 
 a.bg-info:hover, .settings-panel .color-tiles a.tiles.info:hover, a.bg-info:focus, .settings-panel .color-tiles a.tiles.info:focus,
@@ -16072,7 +16075,7 @@ button.bg-dark:focus,
 }
 
 .border-info {
-  border-color: #248AFD !important;
+  border-color: #248AFD  !important;
 }
 
 .border-warning {
@@ -29062,7 +29065,7 @@ div.tagsinput span.tag a {
 
 }
 .bg-info, .settings-panel .color-tiles .tiles.info {
-  background-color: #8328ba !important;
+  background-color: #248AFD !important;
 }
 .navbar .navbar-brand-wrapper .brand-logo-mini {
   padding-left: 0;
