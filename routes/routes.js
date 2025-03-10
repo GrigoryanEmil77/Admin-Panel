@@ -122,6 +122,7 @@ router.post('/login', async (req, res) => {
     }
 });
  
+ 
 router.get('/profile', authenticateToken, async (req, res) => {
     try {
         const admin = await Admin.findById(req.admin.id).select('-password');
@@ -138,10 +139,9 @@ router.get('/profile', authenticateToken, async (req, res) => {
 router.post('/profile', authenticateToken, upload.single('picture'), async (req, res) => {
     try {
         const { name, bio,phone } = req.body;
-        const picture = req.file ? '/images/' + req.file.filename : null; 
+            const picture = req.file ? req.file.location : null; 
 
-        
-        const updatedFields = { name, bio,phone };
+        const updatedFields = { name, bio, phone };
         if (picture) {
             updatedFields.picture = picture;
         }
@@ -158,6 +158,7 @@ router.post('/profile', authenticateToken, upload.single('picture'), async (req,
         res.status(500).send('Server error');
     }
 });
+
 
 
 router.get('/dashboard', authenticateToken, async (req, res) => {
@@ -188,13 +189,13 @@ router.get('/contactinfo', authenticateToken, async (req, res) => {
 });
 router.post('/update-contact', upload.single('picture'), async (req, res) => {
     try {
-        const { title, gmail, phone, location,locationFlorida } = req.body;
+        const { title, gmail, phone, location, locationFlorida } = req.body;
 
-        const updatedFields = { title, gmail, phone, location,locationFlorida };
+        const updatedFields = { title, gmail, phone, location, locationFlorida };
+
 
         if (req.file) {
-            const baseUrl = `${req.protocol}://${req.get('host')}/images`;
-            updatedFields.picture = `${baseUrl}/${req.file.filename}`;
+            updatedFields.picture = req.file.location;
         }
 
         const contactId = req.contact ? req.contact.id : "675f35d75d1b14643c7b4c38";
@@ -212,8 +213,6 @@ router.post('/update-contact', upload.single('picture'), async (req, res) => {
 });
 
 
-
-
 router.get('/customer-reviews', authenticateToken, async (req, res) => {
     try {
         const customerId = req.customer ? req.customer.id : "675f36025d1b14643c7b4c39";
@@ -227,8 +226,6 @@ router.get('/customer-reviews', authenticateToken, async (req, res) => {
         res.status(500).send('Server error');
     }
 });
-
-
 router.post('/update-customer', upload.fields([
     { name: 'customer1picture' },
     { name: 'customer2picture' },
@@ -252,22 +249,12 @@ router.post('/update-customer', upload.fields([
             return res.status(404).send('Customer not found');
         }
 
+    
+        const customer1picture = req.files.customer1picture ? req.files.customer1picture[0].location : existingCustomer.customer1picture;
+        const customer2picture = req.files.customer2picture ? req.files.customer2picture[0].location : existingCustomer.customer2picture;
+        const customer3picture = req.files.customer3picture ? req.files.customer3picture[0].location : existingCustomer.customer3picture;
+
      
-        const baseUrl = `${req.protocol}://${req.get('host')}`;
-
-        const customer1picture = req.files.customer1picture
-            ? `${baseUrl}/images/${req.files.customer1picture[0].filename}`
-            : existingCustomer.customer1picture;
-
-        const customer2picture = req.files.customer2picture
-            ? `${baseUrl}/images/${req.files.customer2picture[0].filename}`
-            : existingCustomer.customer2picture;
-
-        const customer3picture = req.files.customer3picture
-            ? `${baseUrl}/images/${req.files.customer3picture[0].filename}`
-            : existingCustomer.customer3picture;
-
-      
         const updatedFields = {
             titlefirst,
             titlesecond,
@@ -282,11 +269,10 @@ router.post('/update-customer', upload.fields([
             customer3picture,
         };
 
- 
         const updatedCustomer = await Customer.findByIdAndUpdate(
             customerId,
             updatedFields,
-            { new: true } 
+            { new: true }
         );
 
         if (!updatedCustomer) {
@@ -302,8 +288,6 @@ router.post('/update-customer', upload.fields([
         res.status(500).send('Server error');
     }
 });
-
-
 
 
 router.get('/navbarinfo', authenticateToken, async (req, res) => {
@@ -324,13 +308,16 @@ router.post('/navbarinfo', upload.single('picture'), async (req, res) => {
     try {
         const { home, about, services, faqs, testimonials,trucktypes, contact, setup } = req.body;
 
-    
-        const updatedFields = { home, about, services, faqs, testimonials,trucktypes, contact, setup };
+        const updatedFields = { home, about, services, faqs, testimonials, contact, setup };
 
+        // Check if an image was uploaded
         if (req.file) {
-            const baseUrl = `${req.protocol}://${req.get('host')}/images`;
-            updatedFields.picture = `${baseUrl}/${req.file.filename}`;
+            updatedFields.picture = req.file.location; // Save the S3 URL in DB
+            console.log("Uploaded Image URL:", updatedFields.picture); // Log the uploaded image URL
+        } else {
+            console.log("No image uploaded"); // Log when no image is uploaded
         }
+     
         const navbarId = req.navbar ? req.navbar.id : "675f2df2e55dd796c2dbfb44";
         const navbar = await Navbar.findByIdAndUpdate(navbarId, updatedFields, { new: true });
 
@@ -443,18 +430,20 @@ router.get('/aboutinfo', authenticateToken, async (req, res) => {
         res.status(500).send('Server error');
     }
 });
+
+
 router.post('/aboutinfo', upload.single('picture'), async (req, res) => {
     try {
-    
-        const {  titlefirst,titlesecond,text,carriersnumber,loadsnumber,brokersnumber,carrierstext,loadstext,brokerstext } = req.body;
-        const picture = req.file ? '/images/' + req.file.filename : null;
-        const updatedFields = { titlefirst,titlesecond,text,carriersnumber,loadsnumber,brokersnumber,carrierstext,loadstext,brokerstext};
-        if (picture) {
-            updatedFields.picture = picture;
+        const { titlefirst, titlesecond, text, carriersnumber, loadsnumber, brokersnumber, carrierstext, loadstext, brokerstext } = req.body;
+        
+        const updatedFields = { titlefirst, titlesecond, text, carriersnumber, loadsnumber, brokersnumber, carrierstext, loadstext, brokerstext };
+
+        if (req.file) {
+            updatedFields.picture = req.file.location; // Store the S3 URL
         }
 
         const about = await About.findByIdAndUpdate(
-            req.about ? req.about.id : "675f2f8ee55dd796c2dbfb47", 
+            req.about ? req.about.id : "675f2f8ee55dd796c2dbfb47",
             updatedFields,
             { new: true }
         );
@@ -462,12 +451,14 @@ router.post('/aboutinfo', upload.single('picture'), async (req, res) => {
         if (!about) {
             return res.status(404).send('About not found');
         }
+
         res.render('aboutinfo', { about, successMessage: 'About updated successfully' });
     } catch (error) {
         console.error('Error updating about information:', error);
         res.status(500).send('Server error');
     }
 });
+
 
 
 
@@ -484,7 +475,6 @@ router.get('/truckStop', authenticateToken, async (req, res) => {
         res.status(500).send('Server error');
     }
 });
-
 router.post('/truckStop', upload.fields([
     { name: 'picture1' },
     { name: 'picture2' },
@@ -498,12 +488,7 @@ router.post('/truckStop', upload.fields([
     { name: 'picture10' }
 ]), authenticateToken, async (req, res) => {
     try {
-        const {
-            field1,
-            field2,
-            field3,
-        } = req.body;
-
+        const { field1, field2, field3 } = req.body;
         const truckstopId = req.truckstop ? req.truckstop.id : "675f336a5d1b14643c7b4c36";
         const existingTruckstop = await TruckTypesStop.findById(truckstopId);
 
@@ -511,39 +496,25 @@ router.post('/truckStop', upload.fields([
             return res.status(404).send('Truckstop not found');
         }
 
-        const baseUrl = `${req.protocol}://${req.get('host')}`;
-
         const pictureFields = [
-            'picture1',
-            'picture2',
-            'picture3',
-            'picture4',
-            'picture5',
-            'picture6',
-            'picture7',
-            'picture8',
-            'picture9',
-            'picture10'
+            'picture1', 'picture2', 'picture3', 'picture4', 'picture5',
+            'picture6', 'picture7', 'picture8', 'picture9', 'picture10'
         ];
 
-        const updatedFields = {
-            field1,
-            field2,
-            field3,
-        };
+        const updatedFields = { field1, field2, field3 };
 
         pictureFields.forEach(field => {
             if (req.files[field]) {
-                updatedFields[field] = `${baseUrl}/images/${req.files[field][0].filename}`;
+                updatedFields[field] = req.files[field][0].location; // Store S3 URL
             } else {
-                updatedFields[field] = existingTruckstop[field];
+                updatedFields[field] = existingTruckstop[field]; // Keep old image
             }
         });
 
         const updatedTruckstop = await TruckTypesStop.findByIdAndUpdate(
             truckstopId,
             updatedFields,
-            { new: true } 
+            { new: true }
         );
 
         if (!updatedTruckstop) {
@@ -559,7 +530,6 @@ router.post('/truckStop', upload.fields([
         res.status(500).send('Server error');
     }
 });
-
 router.get('/questions', authenticateToken, async (req, res) => {
     try {
         const questionsId = req.questions ? req.questions.id : "675f308d5d1b14643c7b4c32" ;
@@ -626,7 +596,7 @@ router.post('/services', upload.fields([
     { name: 'picture7' }
 ]), async (req, res) => {
     try {
-        console.log("Files received:", req.files); 
+        console.log("Files received:", req.files);
 
         const {
             titleServices,
@@ -648,35 +618,10 @@ router.post('/services', upload.fields([
             return res.status(404).send('Services not found');
         }
 
-        const baseUrl = `${req.protocol}://${req.get('host')}/images`;
-
-        const picture1 = req.files && req.files.picture1
-            ? `${baseUrl}/${req.files.picture1[0].filename}`
-            : existingServices.picture1;
-
-        const picture2 = req.files && req.files.picture2
-            ? `${baseUrl}/${req.files.picture2[0].filename}`
-            : existingServices.picture2;
-
-        const picture3 = req.files && req.files.picture3
-            ? `${baseUrl}/${req.files.picture3[0].filename}`
-            : existingServices.picture3;
-
-        const picture4 = req.files && req.files.picture4
-            ? `${baseUrl}/${req.files.picture4[0].filename}`
-            : existingServices.picture4;
-
-        const picture5 = req.files && req.files.picture5
-            ? `${baseUrl}/${req.files.picture5[0].filename}`
-            : existingServices.picture5;
-
-        const picture6 = req.files && req.files.picture6
-            ? `${baseUrl}/${req.files.picture6[0].filename}`
-            : existingServices.picture6;
-
-        const picture7 = req.files && req.files.picture7
-            ? `${baseUrl}/${req.files.picture7[0].filename}`
-            : existingServices.picture7;
+        // Get image URLs from AWS S3
+        const pictureFields = [
+            'picture1', 'picture2', 'picture3', 'picture4', 'picture5', 'picture6', 'picture7'
+        ];
 
         const updatedFields = {
             titleServices,
@@ -688,17 +633,23 @@ router.post('/services', upload.fields([
             Detention,
             Invoicing,
             Factoring,
-            Support,
-            picture1,
-            picture2,
-            picture3,
-            picture4,
-            picture5,
-            picture6,
-            picture7
+            Support
         };
 
-        const updatedServices = await Services.findByIdAndUpdate(servicesId, updatedFields, { new: true });
+        pictureFields.forEach(field => {
+            if (req.files && req.files[field]) {
+                updatedFields[field] = req.files[field][0].location; // AWS S3 URL
+            } else {
+                updatedFields[field] = existingServices[field]; // Keep existing image
+            }
+        });
+
+        // Update the services document
+        const updatedServices = await Services.findByIdAndUpdate(
+            servicesId,
+            updatedFields,
+            { new: true }
+        );
 
         if (!updatedServices) {
             return res.status(404).send('Services update failed');
@@ -710,11 +661,10 @@ router.post('/services', upload.fields([
         });
 
     } catch (error) {
-        console.error('Detailed error:', error);
+        console.error('Error updating services:', error);
         res.status(500).send('Server error: ' + error.message);
     }
 });
-
 
 router.get('/trucktypes', authenticateToken, async (req, res) => {
     try {
@@ -729,6 +679,7 @@ router.get('/trucktypes', authenticateToken, async (req, res) => {
         res.status(500).send('Server error');
     }
 });
+
 router.post('/trucktypes', upload.fields([
     { name: 'DryVanpicture' },
     { name: 'Reeferpicture' },
@@ -748,34 +699,31 @@ router.post('/trucktypes', upload.fields([
         const existingTruck = await TruckTypes.findById(truckId);
 
         if (!existingTruck) {
-            return res.status(404).send('Trucktypes not found');
+            return res.status(404).send('Truck types not found');
         }
 
-    
-        const baseUrl = `${req.protocol}://${req.get('host')}/images`;
-
-      
+        // Prepare fields to update
         const updatedFields = {
             titleTruck,
             DryVan, Reefer, BoxTruck, Flatbed, StepDeck, PowerOnly,
             DryVantext, Reefertext, BoxTrucktext, Flatbedtext, StepDecktext, PowerOnlytext
         };
 
-
+        // AWS S3: Store image URLs in MongoDB
         const pictureFields = [
-            'DryVanpicture', 'Reeferpicture', 'BoxTruckpicture', 
+            'DryVanpicture', 'Reeferpicture', 'BoxTruckpicture',
             'Flatbedpicture', 'StepDeckpicture', 'PowerOnlypicture'
         ];
 
-        pictureFields.forEach((field) => {
-            if (req.files[field]) {
-                updatedFields[field] = `${baseUrl}/${req.files[field][0].filename}`;
+        pictureFields.forEach(field => {
+            if (req.files && req.files[field]) {
+                updatedFields[field] = req.files[field][0].location; // AWS S3 URL
             } else {
-                updatedFields[field] = existingTruck[field]; 
+                updatedFields[field] = existingTruck[field]; // Keep old image if not updated
             }
         });
 
-    
+        // Update truck type data in MongoDB
         const updatedTruck = await TruckTypes.findByIdAndUpdate(
             truckId,
             updatedFields,
@@ -783,20 +731,19 @@ router.post('/trucktypes', upload.fields([
         );
 
         if (!updatedTruck) {
-            return res.status(404).send('Trucktypes update failed');
+            return res.status(404).send('Truck types update failed');
         }
 
         res.render('trucktypes', {
             truck: updatedTruck,
-            successMessage: 'Trucktypes updated successfully'
+            successMessage: 'Truck types updated successfully'
         });
 
     } catch (error) {
-        console.error('Error updating trucktypes information:', error);
+        console.error('Error updating truck types information:', error);
         res.status(500).send('Server error');
     }
 });
-
 
 router.get('/request', authenticateToken, async (req, res) => {
     try {
@@ -860,13 +807,12 @@ router.post('/upload-videoheader', upload.fields([
     try {
         const updatedFields = {};
 
-     
-        const baseUrl = `${req.protocol}://${req.get('host')}/videos`;
+        // Prepare the fields with AWS S3 URLs
         if (req.files['videodispatch']) {
-            updatedFields.videodispatch = `${baseUrl}/${req.files['videodispatch'][0].filename}`;
+            updatedFields.videodispatch = req.files['videodispatch'][0].location; // S3 URL
         }
         if (req.files['videobackground']) {
-            updatedFields.videobackground = `${baseUrl}/${req.files['videobackground'][0].filename}`;
+            updatedFields.videobackground = req.files['videobackground'][0].location; // S3 URL
         }
 
         const videoId = req.video ? req.video.id : "675f35285d1b14643c7b4c37";
@@ -882,7 +828,6 @@ router.post('/upload-videoheader', upload.fields([
         res.status(500).send('Server error: ' + error.message);
     }
 });
-
 
 router.get('/register', authenticateToken, async (req, res) => {
     try {

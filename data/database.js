@@ -1,7 +1,9 @@
+require("dotenv").config();
+
 const mongoose = require('mongoose');
 const Admin = require('../model/admins'); 
 
-const uri = "mongodb+srv://admin-panel:Zq0jaerHMMjENhsS@cluster0.myade.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+const uri = process.env.MONGO_URI 
 
 async function connectToDatabase() {
   try {
