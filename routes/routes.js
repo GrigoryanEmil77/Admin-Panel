@@ -176,7 +176,8 @@ router.get('/dashboard', authenticateToken, async (req, res) => {
 
 router.get('/contactinfo', authenticateToken, async (req, res) => {
     try {
-        const contactId = req.contact ? req.contact.id : "675f35d75d1b14643c7b4c38";
+        const contactId = req.contact ? req.contact.id : "69f629d736ab53515f047312";
+        //"675f35d75d1b14643c7b4c38";
         const contact = await Contact.findById(contactId);
         if (!contact) {
             return res.status(404).send('Contact not found');
@@ -198,7 +199,7 @@ router.post('/update-contact', upload.single('picture'), async (req, res) => {
             updatedFields.picture = req.file.location;
         }
 
-        const contactId = req.contact ? req.contact.id : "675f35d75d1b14643c7b4c38";
+        const contactId = req.contact ? req.contact.id : "69f629d736ab53515f047312";
         const contact = await Contact.findByIdAndUpdate(contactId, updatedFields, { new: true });
 
         if (!contact) {
@@ -215,7 +216,7 @@ router.post('/update-contact', upload.single('picture'), async (req, res) => {
 
 router.get('/customer-reviews', authenticateToken, async (req, res) => {
     try {
-        const customerId = req.customer ? req.customer.id : "675f36025d1b14643c7b4c39";
+        const customerId = req.customer ? req.customer.id : "69f62d4b36ab53515f04731b";
         const customer = await Customer.findById(customerId);
         if (!customer) {
             return res.status(404).send('Customer not found');
@@ -243,7 +244,7 @@ router.post('/update-customer', upload.fields([
             customer3text,
         } = req.body;
 
-        const customerId = req.customer ? req.customer.id : "675f36025d1b14643c7b4c39";
+        const customerId = req.customer ? req.customer.id : "69f62d4b36ab53515f04731b";
         const existingCustomer = await Customer.findById(customerId);
         if (!existingCustomer) {
             return res.status(404).send('Customer not found');
@@ -292,7 +293,7 @@ router.post('/update-customer', upload.fields([
 
 router.get('/navbarinfo', authenticateToken, async (req, res) => {
     try {
-        const navbarId = req.navbar ? req.navbar.id : "675f2df2e55dd796c2dbfb44" ;
+        const navbarId = req.navbar ? req.navbar.id : "69f62bb836ab53515f047315" ;
         const navbar = await Navbar.findById(navbarId);
         if (!navbar) {
             return res.status(404).send('Navbar not found');
@@ -308,7 +309,7 @@ router.post('/navbarinfo', upload.single('picture'), async (req, res) => {
     try {
         const { home, about, services, faqs, testimonials,trucktypes, contact, setup } = req.body;
 
-        const updatedFields = { home, about, services, faqs, testimonials, contact, setup };
+        const updatedFields = { home, about, services, faqs, testimonials,trucktypes, contact, setup };
 
         // Check if an image was uploaded
         if (req.file) {
@@ -318,7 +319,7 @@ router.post('/navbarinfo', upload.single('picture'), async (req, res) => {
             console.log("No image uploaded"); // Log when no image is uploaded
         }
      
-        const navbarId = req.navbar ? req.navbar.id : "675f2df2e55dd796c2dbfb44";
+        const navbarId = req.navbar ? req.navbar.id : "69f62bb836ab53515f047315";
         const navbar = await Navbar.findByIdAndUpdate(navbarId, updatedFields, { new: true });
 
         if (!navbar) {
@@ -337,7 +338,7 @@ router.post('/navbarinfo', upload.single('picture'), async (req, res) => {
 
 router.get('/follow-us', authenticateToken, async (req, res) => {
     try {
-        const followId = req.follow ? req.follow.id : "675f2ecae55dd796c2dbfb46" ;
+        const followId = req.follow ? req.follow.id : "69f62d1d36ab53515f047319" ;
         const follow = await Follow.findById(followId);
         if (!follow) {
             return res.status(404).send('Follow not found');
@@ -360,7 +361,7 @@ router.post('/follow-us', upload.single('picture'), async (req, res) => {
         }
 
         const follow = await Follow.findByIdAndUpdate(
-            req.follow ? req.follow.id : "675f2ecae55dd796c2dbfb46",
+            req.follow ? req.follow.id : "69f62d1d36ab53515f047319",
             updatedFields,
             { new: true }
         );
@@ -378,7 +379,7 @@ router.post('/follow-us', upload.single('picture'), async (req, res) => {
 
 router.get('/homeinfo', authenticateToken, async (req, res) => {
     try {
-        const homeId = req.home ? req.home.id : "675f2e96e55dd796c2dbfb45" ;
+        const homeId = req.home ? req.home.id : "69f62cf836ab53515f047317" ;
         const home = await Home.findById(homeId);
         if (!home) {
             return res.status(404).send('Home not found');
@@ -400,7 +401,7 @@ router.post('/homeinfo', upload.single('picture'), async (req, res) => {
         }
 
         const home = await Home.findByIdAndUpdate(
-            req.home ? req.home.id : "675f2e96e55dd796c2dbfb45", 
+            req.home ? req.home.id : "69f62cf836ab53515f047317", 
             updatedFields,
             { new: true }
         );
@@ -419,7 +420,7 @@ router.post('/homeinfo', upload.single('picture'), async (req, res) => {
 
 router.get('/aboutinfo', authenticateToken, async (req, res) => {
     try {
-        const aboutId = req.about ? req.about.id : "675f2f8ee55dd796c2dbfb47" ;
+        const aboutId = req.about ? req.about.id : "69f629cd36ab53515f047310" ;
         const about = await About.findById(aboutId);
         if (!about) {
             return res.status(404).send('About not found');
@@ -443,7 +444,7 @@ router.post('/aboutinfo', upload.single('picture'), async (req, res) => {
         }
 
         const about = await About.findByIdAndUpdate(
-            req.about ? req.about.id : "675f2f8ee55dd796c2dbfb47",
+            req.about ? req.about.id : "69f629cd36ab53515f047310",
             updatedFields,
             { new: true }
         );
@@ -464,7 +465,7 @@ router.post('/aboutinfo', upload.single('picture'), async (req, res) => {
 
 router.get('/truckStop', authenticateToken, async (req, res) => {
     try {
-        const trucktopId = req.truckstop ? req.truckstop.id : "675f336a5d1b14643c7b4c36";
+        const trucktopId = req.truckstop ? req.truckstop.id : "69f6312636ab53515f047328";
         const truckstop = await TruckTypesStop.findById(trucktopId);
         if (!truckstop) {
             return res.status(404).send('About not found');
@@ -489,7 +490,7 @@ router.post('/truckStop', upload.fields([
 ]), authenticateToken, async (req, res) => {
     try {
         const { field1, field2, field3 } = req.body;
-        const truckstopId = req.truckstop ? req.truckstop.id : "675f336a5d1b14643c7b4c36";
+        const truckstopId = req.truckstop ? req.truckstop.id : "69f6312636ab53515f047328";
         const existingTruckstop = await TruckTypesStop.findById(truckstopId);
 
         if (!existingTruckstop) {
@@ -532,7 +533,7 @@ router.post('/truckStop', upload.fields([
 });
 router.get('/questions', authenticateToken, async (req, res) => {
     try {
-        const questionsId = req.questions ? req.questions.id : "675f308d5d1b14643c7b4c32" ;
+        const questionsId = req.questions ? req.questions.id : "69f6310936ab53515f047320";
         const questions = await Questions.findById(questionsId);
         if (!questions) {
             return res.status(404).send('Questions not found');
@@ -556,7 +557,7 @@ router.post('/questions', upload.single('picture'), async (req, res) => {
         }
 
         const questions = await Questions.findByIdAndUpdate(
-            req.questions ? req.questions.id : "675f308d5d1b14643c7b4c32",
+            req.questions ? req.questions.id : "69f6310936ab53515f047320",
             updatedFields,
             { new: true }
         );
@@ -574,7 +575,7 @@ router.post('/questions', upload.single('picture'), async (req, res) => {
 
 router.get('/services', authenticateToken, async (req, res) => {
     try {
-        const servicesId = req.services ? req.services.id : "675f30e15d1b14643c7b4c33" ;
+        const servicesId = req.services ? req.services.id : "69f6311936ab53515f047324" ;
         const services = await Services.findById(servicesId);
         if (!services) {
             return res.status(404).send('Services not found');
@@ -611,7 +612,7 @@ router.post('/services', upload.fields([
             Support
         } = req.body;
 
-        const servicesId = req.services ? req.services.id : "675f30e15d1b14643c7b4c33";
+        const servicesId = req.services ? req.services.id : "69f6311936ab53515f047324";
         const existingServices = await Services.findById(servicesId);
 
         if (!existingServices) {
@@ -668,7 +669,7 @@ router.post('/services', upload.fields([
 
 router.get('/trucktypes', authenticateToken, async (req, res) => {
     try {
-        const truckId = req.truck ? req.truck.id : "675f33225d1b14643c7b4c35";
+        const truckId = req.truck ? req.truck.id : "69f6311e36ab53515f047326";
         const truck = await TruckTypes.findById(truckId);
         if (!truck) {
             return res.status(404).send('TruckTypes not found');
@@ -695,7 +696,7 @@ router.post('/trucktypes', upload.fields([
             DryVantext, Reefertext, BoxTrucktext, Flatbedtext, StepDecktext, PowerOnlytext
         } = req.body;
 
-        const truckId = req.truck ? req.truck.id : "675f33225d1b14643c7b4c35";
+        const truckId = req.truck ? req.truck.id : "69f6311e36ab53515f047326";
         const existingTruck = await TruckTypes.findById(truckId);
 
         if (!existingTruck) {
@@ -747,7 +748,7 @@ router.post('/trucktypes', upload.fields([
 
 router.get('/request', authenticateToken, async (req, res) => {
     try {
-        const requestId = req.request ? req.request.id : "675f32e75d1b14643c7b4c34";
+        const requestId = req.request ? req.request.id : "69f6311436ab53515f047322";
         const request = await Request.findById(requestId);
         if (!request) {
             return res.status(404).send('Request not found');
@@ -771,7 +772,7 @@ router.post('/request', upload.single('picture'), async (req, res) => {
         }
 
         const request= await Request.findByIdAndUpdate(
-            req.request ? req.request.id : "675f32e75d1b14643c7b4c34",
+            req.request ? req.request.id : "69f6311436ab53515f047322",
             updatedFields,
             { new: true }
         );
@@ -789,7 +790,7 @@ router.post('/request', upload.single('picture'), async (req, res) => {
 
 router.get('/upload-videoheader', authenticateToken, async (req, res) => {
     try {
-        const videoId = req.video ? req.video.id : "675f35285d1b14643c7b4c37" ;
+        const videoId = req.video ? req.video.id : "69f6312b36ab53515f04732a" ;
         const video = await VideoTypesAll.findById(videoId);
         if (!video) {
             return res.status(404).send('About not found');
@@ -815,7 +816,7 @@ router.post('/upload-videoheader', upload.fields([
             updatedFields.videobackground = req.files['videobackground'][0].location; // S3 URL
         }
 
-        const videoId = req.video ? req.video.id : "675f35285d1b14643c7b4c37";
+        const videoId = req.video ? req.video.id : "69f6312b36ab53515f04732a";
         const video = await VideoTypesAll.findByIdAndUpdate(videoId, updatedFields, { new: true });
 
         if (!video) {
